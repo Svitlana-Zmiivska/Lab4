@@ -1,9 +1,7 @@
-package com.ds.processor;
+package com.titapr.processor;
 
-import com.ds.bean.Alternative;
-import com.ds.bean.LPR;
-import com.ds.data.AlternativeDAO;
-import com.ds.data.LprDAO;
+import com.titapr.bean.Alternative;
+import com.titapr.data.AlternativeDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

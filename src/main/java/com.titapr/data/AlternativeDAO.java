@@ -1,8 +1,7 @@
-package com.ds.data;
+package com.titapr.data;
 
-import com.ds.bean.Alternative;
-import com.ds.bean.Vector;
-import com.ds.data.mapper.AlternativeRowMapper;
+import com.titapr.bean.Alternative;
+import com.titapr.data.mapper.AlternativeRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;

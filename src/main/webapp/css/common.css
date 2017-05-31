@@ -3,14 +3,15 @@ button:focus{
 }
 
 body {
-    background-color: #444;
+    background-color: #eee;
     color: #232323;
     text-align: center;
+    margin-top: 300px;
     font: 10pt Verdana, Helvetica, Arial, sans-serif;
 }
 
 table {
-    border: 2px solid #444;
+    border: 2px dotted #eee;
     border-collapse: separate;
     border-spacing: 0;
     border-radius: 8px;
@@ -36,11 +37,11 @@ a, button {
 }
 
 .tbl_lb {
-    border-left:solid #444 1px;
+    border-left:solid #eee 1px;
 }
 
 .tbl_tb {
-    border-top:solid #444 1px;
+    border-top:solid #eee 1px;
 }
 
 .np {
@@ -52,7 +53,7 @@ td, th {
 }
 
 .metal-background {
-    background-image: url(/image/metal.png);
+    background-image: url(/image/im.jpg);
 }
 
 .chkd-btn {

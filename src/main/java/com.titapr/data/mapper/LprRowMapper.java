@@ -1,6 +1,6 @@
-package com.ds.data.mapper;
+package com.titapr.data.mapper;
 
-import com.ds.bean.LPR;
+import com.titapr.bean.LPR;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

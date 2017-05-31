@@ -1,4 +1,4 @@
-package com.ds.bean;
+package com.titapr.bean;
 
 /**
  * Created by D on 5/18/2017.

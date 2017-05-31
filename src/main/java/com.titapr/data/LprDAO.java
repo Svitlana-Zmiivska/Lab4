@@ -1,7 +1,7 @@
-package com.ds.data;
+package com.titapr.data;
 
-import com.ds.bean.LPR;
-import com.ds.data.mapper.LprRowMapper;
+import com.titapr.bean.LPR;
+import com.titapr.data.mapper.LprRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -14,7 +14,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
-
 
 @Repository
 public class LprDAO {

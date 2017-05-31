@@ -1,9 +1,9 @@
-package com.ds.data;
+package com.titapr.data;
 
-import com.ds.bean.Alternative;
-import com.ds.bean.Mark;
-import com.ds.bean.Vector;
-import com.ds.data.mapper.MarkRowMapper;
+import com.titapr.bean.Alternative;
+import com.titapr.bean.Mark;
+import com.titapr.bean.Vector;
+import com.titapr.data.mapper.MarkRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -59,16 +59,14 @@ public class MarkDAO {
 
     public Mark createMark(final Mark mark, final Alternative alternative) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        mJdbcTemplate.update(new PreparedStatementCreator() {
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement(SQL_INSERT_INTO_MARK, new String[]{"mnum"});
-                ps.setLong(1, mark.getcNum());
-                ps.setString(2, mark.getName());
-                ps.setInt(3, mark.getRange());
-                ps.setDouble(4, mark.getNumMark());
-                ps.setInt(5, mark.getNormMark());
-                return ps;
-            }
+        mJdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(SQL_INSERT_INTO_MARK, new String[]{"mnum"});
+            ps.setLong(1, mark.getcNum());
+            ps.setString(2, mark.getName());
+            ps.setInt(3, mark.getRange());
+            ps.setDouble(4, mark.getNumMark());
+            ps.setInt(5, mark.getNormMark());
+            return ps;
         }, keyHolder);
         mark.setNum(keyHolder.getKey().longValue());
         Vector vector = new Vector();

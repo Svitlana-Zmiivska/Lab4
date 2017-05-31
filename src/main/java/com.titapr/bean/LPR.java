@@ -1,4 +1,4 @@
-package com.ds.bean;
+package com.titapr.bean;
 
 
 public class LPR {

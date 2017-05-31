@@ -1,18 +1,15 @@
-package com.ds.data;
+package com.titapr.data;
 
-import com.ds.bean.Vector;
-import com.ds.data.mapper.VectorRowMapper;
+import com.titapr.bean.Vector;
+import com.titapr.data.mapper.VectorRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -38,13 +35,11 @@ public class VectorDAO {
 
     public Vector createVector(final Vector vector) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        mJdbcTemplate.update(new PreparedStatementCreator() {
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement(SQL_INSERT_INTO_vector, new String[]{"vnum"});
-                ps.setLong(1, vector.getaNum());
-                ps.setLong(2, vector.getmNum());
-                return ps;
-            }
+        mJdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(SQL_INSERT_INTO_vector, new String[]{"vnum"});
+            ps.setLong(1, vector.getaNum());
+            ps.setLong(2, vector.getmNum());
+            return ps;
         }, keyHolder);
         vector.setNum(keyHolder.getKey().longValue());
         return vector;

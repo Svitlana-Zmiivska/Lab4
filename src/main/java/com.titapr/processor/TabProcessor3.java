@@ -1,7 +1,7 @@
-package com.ds.processor;
+package com.titapr.processor;
 
-import com.ds.bean.*;
-import com.ds.data.*;
+import com.titapr.bean.*;
+import com.titapr.data.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -104,7 +104,7 @@ public class TabProcessor3 {
         for (Map.Entry<Long, Boolean> e : res11.entrySet()) {
             if (e.getValue()){
                 if (found) {
-                    request.getSession().setAttribute("winner1", "Не визначено");
+                    request.getSession().setAttribute("winner1", "Не определен");
                     break;
                 }
                 found = true;
@@ -112,7 +112,7 @@ public class TabProcessor3 {
             }
         }
         if (!found) {
-            request.getSession().setAttribute("winner1", "Не визначено");
+            request.getSession().setAttribute("winner1", "Не определен");
         }
 
         // 2
@@ -152,7 +152,7 @@ public class TabProcessor3 {
             }
         }
         if (count > 1) {
-            request.getSession().setAttribute("winner2", "Не визначено");
+            request.getSession().setAttribute("winner2", "Не определен");
         } else if (min != null) {
             request.getSession().setAttribute("winner2", alternativeDAO.getAlternativeById(min.getKey()).getName());
         }

@@ -1,7 +1,7 @@
-package com.ds.data;
+package com.titapr.data;
 
-import com.ds.bean.Result;
-import com.ds.data.mapper.ResultRowMapper;
+import com.titapr.bean.Result;
+import com.titapr.data.mapper.ResultRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -38,15 +38,13 @@ public class ResultDAO {
 
     public Result createResult(final Result result) {
         KeyHolder keyHolder = new GeneratedKeyHolder();
-        mJdbcTemplate.update(new PreparedStatementCreator() {
-            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                PreparedStatement ps = connection.prepareStatement(SQL_INSERT_INTO_result, new String[]{"rnum"});
-                ps.setLong(1, result.getlNum());
-                ps.setLong(2, result.getaNum());
-                ps.setDouble(3, result.getRange());
-                ps.setInt(4, result.getaWeight());
-                return ps;
-            }
+        mJdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(SQL_INSERT_INTO_result, new String[]{"rnum"});
+            ps.setLong(1, result.getlNum());
+            ps.setLong(2, result.getaNum());
+            ps.setDouble(3, result.getRange());
+            ps.setInt(4, result.getaWeight());
+            return ps;
         }, keyHolder);
         result.setNum(keyHolder.getKey().longValue());
         return result;

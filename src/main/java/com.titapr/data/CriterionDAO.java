@@ -1,7 +1,7 @@
-package com.ds.data;
+package com.titapr.data;
 
-import com.ds.bean.Criterion;
-import com.ds.data.mapper.CriterionRowMapper;
+import com.titapr.bean.Criterion;
+import com.titapr.data.mapper.CriterionRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;

@@ -1,6 +1,8 @@
-package com.ds.controller;
+package com.titapr.controller;
 
-import com.ds.processor.*;
+import com.titapr.processor.TabProcessor1;
+import com.titapr.processor.TabProcessor2;
+import com.titapr.processor.TabProcessor3;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
