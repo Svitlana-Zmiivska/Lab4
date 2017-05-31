@@ -1,0 +1,9 @@
+#General
+.idea/
+.iml
+target
+lib
+
+#Specific files
+config.properties
+
