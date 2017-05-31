@@ -25,7 +25,7 @@
 
   <filter>
     <filter-name>EncodingFilter</filter-name>
-    <filter-class>com.ds.web.EncodingFilter</filter-class>
+    <filter-class>com.titapr.web.EncodingFilter</filter-class>
 
     <init-param>
       <param-name>encoding</param-name>

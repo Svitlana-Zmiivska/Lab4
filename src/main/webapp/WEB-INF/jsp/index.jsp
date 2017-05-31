@@ -16,7 +16,7 @@
 
 <div class="metal-background rounded-block center" style="width: 70em;">
 
-    <h2>Правило Копленда</h2>
+    <h2>Правило абсолютного большинства и Правило Копленда</h2>
 
     <div style="margin: 20px">
        <a href="/index?tabId=1"><button class="e-btn ${param.tabId == 1? 'chkd-btn' : ''}">Участники</button></a>
@@ -156,7 +156,7 @@
         <table style="margin: auto; width: 400px">
             <thead>
                 <tr>
-
+                    <th>Правило абсолютного большинства</th>
                     <th class="tbl_lb">Правило Копленда</th>
                 </tr>
             </thead>
